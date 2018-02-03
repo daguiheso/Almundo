@@ -4,6 +4,7 @@ const debug = require('debug')('almundo:api')
 const http = require('http')
 const chalk = require('chalk')
 const express = require('express')
+var path = require('path')
 
 const api = require('./api')
 
@@ -11,6 +12,7 @@ const port = process.env.PORT || 3000
 const app = express()
 const server = http.createServer(app)
 
+app.use(express.static(path.join(__dirname, 'public')))
 app.use('/api', api)
 
 // Express Error Handler
