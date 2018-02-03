@@ -4,8 +4,8 @@
   "description": "almundo test",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "start-dev": "nodemon server.js",
+    "start": "NODE_ENV=production node server.js",
+    "start-dev": "DEBUG=almundo:* nodemon server.js",
     "lint": "standard"
   },
   "repository": {
