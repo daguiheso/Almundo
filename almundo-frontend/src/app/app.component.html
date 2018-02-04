@@ -1,74 +1,236 @@
 <header class="header">
-  <img src="./assets/images/almundo.png" alt="Almundo">
+  <img src="/assets/images/almundo.svg" alt="Almundo">
 </header>
-<aside class="asideFilters">
-  <div class="asideFilters__title">
-    Filtros
-  </div>
-  <div class="accordion">
-    <!-- Filter hotel name -->
-    <div class="accordion__panel">
-      <div class="accordion__panel--header">
-        <span class="icon__search"></span>
-        <p>Nombre del hotel</p>
-        <span class="icon__arrow--up"></span>
+<div class="wrapper wrapperFlex">
+  <aside class="asideFilters">
+    <div class="asideFilters__title">
+      Filtros
+    </div>
+    <div class="accordion">
+      <!-- Filter hotel name -->
+      <div class="accordion__panel">
+        <div class="accordion__panel--header">
+          <span class="icon__search"></span>
+          <p>Nombre del hotel</p>
+          <span class="icon__arrow--up arrow"></span>
+        </div>
+        <div class="accordion__panel--body">
+          <form action="">
+            <input type="text" placeholder="Ingrese el nombre del hotel">
+            <button type="submit">Aceptar</button>
+          </form>
+        </div>
       </div>
-      <div class="accordion__panel--body">
-        <form action="">
-          <input type="text" placeholder="Ingrese el nombre del hotel">
-          <button type="submit"Aceptar></button>
-        </form>
+      <!-- Filter hotel start -->
+      <div class="accordion__panel">
+        <div class="accordion__panel--header">
+          <span class="icon__star"></span>
+          <p>Estrellas</p>
+          <span class="icon__arrow--up arrow"></span>
+        </div>
+        <div class="accordion__panel--body">
+          <ul class="filterStars">
+            <li>
+              <input type="checkbox" name="star" value="Bike">
+              <div>
+                Todas las estrellas
+              </div>
+            </li>
+            <li>
+              <input type="checkbox" name="star" value="Bike">
+              <div>
+                <span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span>
+              </div>
+            </li>
+            <li>
+              <input type="checkbox" name="star" value="Bike">
+              <div>
+                <span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span>
+              </div>
+            </li>
+            <li>
+              <input type="checkbox" name="star" value="Bike">
+              <div>
+                <span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span>
+              </div>
+            </li>
+            <li>
+              <input type="checkbox" name="star" value="Bike">
+              <div>
+                <span class="icon__star"></span><span class="icon__star"></span>
+              </div>
+            </li>
+            <li>
+              <input type="checkbox" name="star" value="Bike">
+              <div>
+                <span class="icon__star"></span>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <!-- Filter hotel start -->
-    <div class="accordion__panel">
-      <div class="accordion__panel--header">
-        <span class="icon__star"></span>
-        <p>Estrellas</p>
-        <span class="icon__arrow--up"></span>
-      </div>
-      <div class="accordion__panel--body">
-        <ul class="filterStars">
-          <li>
-            <input type="checkbox" name="star" value="Bike">
-            <div>
-              <span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span>
-            </div>
-          </li>
-          <li>
-            <input type="checkbox" name="star" value="Bike">
-            <div>
-              <span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span>
-            </div>
-          </li>
-          <li>
-            <input type="checkbox" name="star" value="Bike">
-            <div>
-              <span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span>
-            </div>
-          </li>
-          <li>
-            <input type="checkbox" name="star" value="Bike">
-            <div>
-              <span class="icon__star"></span><span class="icon__star"></span>
-            </div>
-          </li>
-          <li>
-            <input type="checkbox" name="star" value="Bike">
-            <div>
-              <span class="icon__star"></span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</aside>
-<section>
+  </aside>
   <ul class="gridList">
     <li class="gridList__item">
       <div class="gridList__item--image">
-        <img src="./assets/images/test.jpg" alt="">
+        <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
+      </div>
+      <div class="gridList__item--info">
+        <h3>Hotel Stefanos</h3>
+        <div class="stars">
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+        </div>
+        <div class="amenities">
+          <span class="icon__bathrobes"></span>
+          <span class="icon__beach"></span>
+          <span class="icon__children--club"></span>
+        </div>
+      </div>
+      <div class="gridList__item--price">
+        <p>Precio por noche por habitación</p>
+        <div class="price">
+          <span>ARS</span>
+          863
+        </div>
+        <a href="#">Ver hotel</a>
+      </div>
+    </li>
+    <li class="gridList__item">
+      <div class="gridList__item--image">
+        <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
+      </div>
+      <div class="gridList__item--info">
+        <h3>Hotel Stefanos</h3>
+        <div class="stars">
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+        </div>
+        <div class="amenities">
+          <span class="icon__bathrobes"></span>
+          <span class="icon__beach"></span>
+          <span class="icon__children--club"></span>
+        </div>
+      </div>
+      <div class="gridList__item--price">
+        <p>Precio por noche por habitación</p>
+        <div class="price">
+          <span>ARS</span>
+          863
+        </div>
+        <a href="#">Ver hotel</a>
+      </div>
+    </li>
+    <li class="gridList__item">
+      <div class="gridList__item--image">
+        <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
+      </div>
+      <div class="gridList__item--info">
+        <h3>Hotel Stefanos Hotel Stefanos Hotel Stefanos Hotel Stefanos</h3>
+        <div class="stars">
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+        </div>
+        <div class="amenities">
+          <span class="icon__bathrobes"></span>
+          <span class="icon__beach"></span>
+          <span class="icon__children--club"></span>
+        </div>
+      </div>
+      <div class="gridList__item--price">
+        <p>Precio por noche por habitación</p>
+        <div class="price">
+          <span>ARS</span>
+          863
+        </div>
+        <a href="#">Ver hotel</a>
+      </div>
+    </li>
+    <li class="gridList__item">
+      <div class="gridList__item--image">
+        <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
+      </div>
+      <div class="gridList__item--info">
+        <h3>Hotel Stefanos</h3>
+        <div class="stars">
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+        </div>
+        <div class="amenities">
+          <span class="icon__bathrobes"></span>
+          <span class="icon__beach"></span>
+          <span class="icon__children--club"></span>
+        </div>
+      </div>
+      <div class="gridList__item--price">
+        <p>Precio por noche por habitación</p>
+        <div class="price">
+          <span>ARS</span>
+          863
+        </div>
+        <a href="#">Ver hotel</a>
+      </div>
+    </li>
+    <li class="gridList__item">
+      <div class="gridList__item--image">
+        <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
+      </div>
+      <div class="gridList__item--info">
+        <h3>Hotel Stefanos</h3>
+        <div class="stars">
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+        </div>
+        <div class="amenities">
+          <span class="icon__bathrobes"></span>
+          <span class="icon__beach"></span>
+          <span class="icon__children--club"></span>
+        </div>
+      </div>
+      <div class="gridList__item--price">
+        <p>Precio por noche por habitación</p>
+        <div class="price">
+          <span>ARS</span>
+          863
+        </div>
+        <a href="#">Ver hotel</a>
+      </div>
+    </li>
+    <li class="gridList__item">
+      <div class="gridList__item--image">
+        <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
+      </div>
+      <div class="gridList__item--info">
+        <h3>Hotel Stefanos</h3>
+        <div class="stars">
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+          <span class="icon__star"></span>
+        </div>
+        <div class="amenities">
+          <span class="icon__bathrobes"></span>
+          <span class="icon__beach"></span>
+          <span class="icon__children--club"></span>
+        </div>
+      </div>
+      <div class="gridList__item--price">
+        <p>Precio por noche por habitación</p>
+        <div class="price">
+          <span>ARS</span>
+          863
+        </div>
+        <a href="#">Ver hotel</a>
+      </div>
+    </li>
+    <li class="gridList__item">
+      <div class="gridList__item--image">
+        <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
       </div>
       <div class="gridList__item--info">
         <h3>Hotel Stefanos</h3>
@@ -93,4 +255,4 @@
       </div>
     </li>
   </ul>
-</section>
+</div>

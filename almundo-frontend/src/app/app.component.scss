@@ -1,0 +1,274 @@
+$blue: #2e2ead;
+$yellow: #ffd800;
+
+.u {
+	&__center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.header {
+	background: $blue;
+	padding: 12px 20px;
+}
+
+.asideFilters {
+	background: white;
+	width: 270px;
+	&__title {
+		color: #666;
+		font-weight: bold;
+		padding: 11px 12px;
+		border-bottom: 5px solid #f5f3f3;
+	}
+	.filterStars {
+		li {
+			display: flex;
+			align-items: center;
+			padding: 6px 0;
+			font-weight: 500;
+			input {
+				margin-right: 10px;
+			}
+			> div {
+				span {
+					margin: 0 1px;
+					color: $yellow;
+				}
+			}
+		}
+	}
+	@media (max-width: 600px) {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+}
+
+.accordion {
+	&__panel {
+		box-shadow: 1px 1px 2px 0px #c7c4c7;
+		border-bottom: 5px solid #f5f3f3;
+		&--header {
+			// border: 1px solid;
+			color: $blue;
+			padding: 14px 15px;
+			display: flex;
+			align-items: center;
+			position: relative;
+			.arrow {
+				position: absolute;
+				right: 12px;
+				font-size: 1.8em;
+			}
+			> p {
+				margin-left: 8px;
+				font-weight: 500;
+			}
+		}
+		&--body {
+			padding: 10px 15px;
+			form {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				input {
+					font-size: .8em;
+					height: 33px;
+					padding: 0 7px;
+					width: calc(100% - 110px);
+					box-shadow: 1px 1px 0px 0px #c7c4c7;
+				}
+				button {
+					box-shadow: 1px 1px 0px 0px #c7c4c7;
+					background: darkblue;
+					color: white;
+					border: none;
+					height: 37px;
+					font-weight: 500;
+					width: 80px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+.gridList {
+	width: calc(100% - 290px);
+	height: calc(100vh - 115px);
+	overflow: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	&__item {
+		background: white;
+		box-shadow: 1px 1px 0px 0px #c7c4c7;
+		padding: 10px;
+		display: flex;
+		position: relative;
+		flex-wrap: wrap;
+		margin-bottom: 15px;
+		width: 100%;
+		&--image {
+			width: 300px;
+			img {
+				width: 100%;
+				display: block;
+			}
+		}
+		&--info {
+			margin-left: 16px;
+			min-height: 121px;
+			h3 {
+				color: blue;
+				margin-top: 4px;
+				max-width: 160px;
+			}
+			.stars {
+				color: $yellow;
+				margin-top: 5px;
+				font-size: 1.2em;
+				span {
+					margin: 0 1px;
+				}
+			}
+			.amenities {
+				margin-top: 10px;
+				span {
+					font-size: 1.4em;
+					margin-right: 7px;
+					display: inline-block;
+				}
+			}
+		}
+		&--price {
+			border-left: 1px dashed gray;
+			padding: 5px 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			bottom: 10px;
+			p {
+				text-align: center;
+				width: 80%;
+				color: #666;
+				margin-bottom: 6px;
+				font-size: .9em;
+			}
+			.price {
+				color: orangered;
+				font-weight: 900;
+				font-size: 2.5em;
+				margin-bottom: 8px;
+				@extend .u__center;
+				span {
+					font-weight: 400;
+					font-size: 1.7rem;
+					margin-right: 3px;
+				}
+			}
+			> a {
+				background: $blue;
+				color: white;
+				border-radius: 4px;
+				display: inline-block;
+				padding: 8px 15px;
+				min-width: 130px;
+				text-align: center;
+				box-shadow: inset 0px -1px 3px -1px rgba(3,1,41,1);
+				font-weight: bold;
+				font-size: 1.5em;
+				@extend .u__center;
+			}
+		}
+	}
+	@media (max-width: 1180px) {
+		&__item {
+			&--image {
+				width: 230px;
+			}
+			&--price {
+				> a {
+					padding: 6px 15px;
+					font-size: 1.2em;
+				}
+			}
+		}
+	}
+	@media (max-width: 1020px) {
+		&__item {
+			&--image {
+				width: 180px;
+			}
+			&--price {
+				> a {
+					padding: 4px 15px;
+					font-size: 1.2em;
+				}
+			}
+		}
+	}
+	@media (max-width: 991px) {
+		&__item {
+			width: 45%;
+			&--image {
+				width: 100%;
+			}
+			&--info {
+				width: 100%;
+				padding: 10px 0 0;
+				margin-left: 0;
+				h3 {
+					max-width: initial;
+					margin-top: 0;
+				}
+			}
+			&--price {
+				position: initial;
+				width: 100%;
+				border: none;
+				border-top: 1px dashed gray;
+				padding: 20px 10px;
+				p {
+					width: 100%;
+				}
+				> a {
+					padding: 8px 15px;
+					font-size: 1.3em;
+					width: 100%;
+				}
+			}
+		}
+	}
+	@media (max-width: 767px) {
+		&__item {
+			width: 100%;
+		}
+	}
+	@media (max-width: 600px) {
+		width: 100%;
+		height: auto;
+		overflow: initial;
+		&__item {
+			&--price {
+				> a {
+					padding: 10px 15px;
+				}
+			}
+		}
+	}
+
+}
+
+.wrapper {
+	@media (max-width: 600px) {
+		flex-direction: column;
+		padding: 20px 10px;
+	}
+}
