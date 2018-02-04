@@ -1,0 +1,17 @@
+$blue: #2e2ead;
+$yellow: #ffd800;
+
+.u {
+	&__center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.wrapper {
+	@media (max-width: 600px) {
+		flex-direction: column;
+		padding: 20px 10px;
+	}
+}

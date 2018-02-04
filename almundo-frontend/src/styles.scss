@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
 
+$blue: #2e2ead;
+$yellow: #ffd800;
+
 * {
 	box-sizing: border-box;
 }
@@ -21,6 +24,11 @@ p, ul, li, h1, h2, h3, h4, h5, h6 {
 	list-style: none;
 }
 
+.header {
+	background: $blue;
+	padding: 12px 20px;
+}
+
 .wrapper {
 	padding: 20px;
 	&Flex {
@@ -28,3 +36,4 @@ p, ul, li, h1, h2, h3, h4, h5, h6 {
 		justify-content: space-between;
 	}
 }
+
