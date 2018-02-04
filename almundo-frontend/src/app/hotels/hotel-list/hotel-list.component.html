@@ -1,182 +1,41 @@
 <ul class="gridList">
-  <li class="gridList__item">
+  <li *ngFor="let hotel of hotels" class="gridList__item">
+    <!-- Image -->
     <div class="gridList__item--image">
-      <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
+      <img src="http://localhost:3000/images/hotels/{{hotel.image}}" alt="{{hotel.name}}">
     </div>
     <div class="gridList__item--info">
-      <h3>Hotel Stefanos</h3>
-      <div class="stars">
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
+      <!-- Name Hotel -->
+      <h3>{{hotel.name}}</h3>
+      <!-- Stars Hotel -->
+      <div *ngIf="validateStars(hotel, 5)" class="stars">
+        <span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span>
+      </div>
+      <div *ngIf="validateStars(hotel, 4)" class="stars">
+        <span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span>
+      </div>
+      <div *ngIf="validateStars(hotel, 3)" class="stars">
+        <span class="icon__star"></span><span class="icon__star"></span><span class="icon__star"></span>
+      </div>
+      <div *ngIf="validateStars(hotel, 2)" class="stars">
+        <span class="icon__star"></span><span class="icon__star"></span>
+      </div>
+      <div *ngIf="validateStars(hotel, 1)" class="stars">
         <span class="icon__star"></span>
       </div>
-      <div class="amenities">
-        <span class="icon__bathrobes"></span>
-        <span class="icon__beach"></span>
-        <span class="icon__children--club"></span>
-      </div>
+      <!-- Amenitioes Hotel -->
+      <ul class="amenities">
+        <li *ngFor="let item of hotel.amenities">
+          <span class="icon__{{item}}"></span>
+        </li>
+      </ul>
     </div>
+    <!-- Price Hotel -->
     <div class="gridList__item--price">
       <p>Precio por noche por habitación</p>
       <div class="price">
         <span>ARS</span>
-        863
-      </div>
-      <a href="#">Ver hotel</a>
-    </div>
-  </li>
-  <li class="gridList__item">
-    <div class="gridList__item--image">
-      <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
-    </div>
-    <div class="gridList__item--info">
-      <h3>Hotel Stefanos</h3>
-      <div class="stars">
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-      </div>
-      <div class="amenities">
-        <span class="icon__bathrobes"></span>
-        <span class="icon__beach"></span>
-        <span class="icon__children--club"></span>
-      </div>
-    </div>
-    <div class="gridList__item--price">
-      <p>Precio por noche por habitación</p>
-      <div class="price">
-        <span>ARS</span>
-        863
-      </div>
-      <a href="#">Ver hotel</a>
-    </div>
-  </li>
-  <li class="gridList__item">
-    <div class="gridList__item--image">
-      <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
-    </div>
-    <div class="gridList__item--info">
-      <h3>Hotel Stefanos Hotel Stefanos Hotel Stefanos Hotel Stefanos</h3>
-      <div class="stars">
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-      </div>
-      <div class="amenities">
-        <span class="icon__bathrobes"></span>
-        <span class="icon__beach"></span>
-        <span class="icon__children--club"></span>
-      </div>
-    </div>
-    <div class="gridList__item--price">
-      <p>Precio por noche por habitación</p>
-      <div class="price">
-        <span>ARS</span>
-        863
-      </div>
-      <a href="#">Ver hotel</a>
-    </div>
-  </li>
-  <li class="gridList__item">
-    <div class="gridList__item--image">
-      <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
-    </div>
-    <div class="gridList__item--info">
-      <h3>Hotel Stefanos</h3>
-      <div class="stars">
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-      </div>
-      <div class="amenities">
-        <span class="icon__bathrobes"></span>
-        <span class="icon__beach"></span>
-        <span class="icon__children--club"></span>
-      </div>
-    </div>
-    <div class="gridList__item--price">
-      <p>Precio por noche por habitación</p>
-      <div class="price">
-        <span>ARS</span>
-        863
-      </div>
-      <a href="#">Ver hotel</a>
-    </div>
-  </li>
-  <li class="gridList__item">
-    <div class="gridList__item--image">
-      <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
-    </div>
-    <div class="gridList__item--info">
-      <h3>Hotel Stefanos</h3>
-      <div class="stars">
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-      </div>
-      <div class="amenities">
-        <span class="icon__bathrobes"></span>
-        <span class="icon__beach"></span>
-        <span class="icon__children--club"></span>
-      </div>
-    </div>
-    <div class="gridList__item--price">
-      <p>Precio por noche por habitación</p>
-      <div class="price">
-        <span>ARS</span>
-        863
-      </div>
-      <a href="#">Ver hotel</a>
-    </div>
-  </li>
-  <li class="gridList__item">
-    <div class="gridList__item--image">
-      <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
-    </div>
-    <div class="gridList__item--info">
-      <h3>Hotel Stefanos</h3>
-      <div class="stars">
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-      </div>
-      <div class="amenities">
-        <span class="icon__bathrobes"></span>
-        <span class="icon__beach"></span>
-        <span class="icon__children--club"></span>
-      </div>
-    </div>
-    <div class="gridList__item--price">
-      <p>Precio por noche por habitación</p>
-      <div class="price">
-        <span>ARS</span>
-        863
-      </div>
-      <a href="#">Ver hotel</a>
-    </div>
-  </li>
-  <li class="gridList__item">
-    <div class="gridList__item--image">
-      <img src="http://localhost:3000/images/hotels/2a5bb415_b.jpg" alt="">
-    </div>
-    <div class="gridList__item--info">
-      <h3>Hotel Stefanos</h3>
-      <div class="stars">
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-        <span class="icon__star"></span>
-      </div>
-      <div class="amenities">
-        <span class="icon__bathrobes"></span>
-        <span class="icon__beach"></span>
-        <span class="icon__children--club"></span>
-      </div>
-    </div>
-    <div class="gridList__item--price">
-      <p>Precio por noche por habitación</p>
-      <div class="price">
-        <span>ARS</span>
-        863
+        {{hotel.price}}
       </div>
       <a href="#">Ver hotel</a>
     </div>
