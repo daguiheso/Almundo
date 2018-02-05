@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingModule } from 'ngx-loading';
+
 import { RouterModule, Route } from '@angular/router';
 
 import { HotelsRoutingModule } from './hotels-routing.module';
@@ -15,7 +17,14 @@ import { HotelsService } from './services/hotels.service';
     CommonModule,
     FormsModule,
     HotelsRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    LoadingModule.forRoot({
+      backdropBackgroundColour: 'rgba(0,0,0,0.1)',
+      primaryColour: '#ff4a07',
+      secondaryColour: '#ff4a07',
+      tertiaryColour: '#ff4a07',
+      backdropBorderRadius: '0px'
+    })
   ],
   declarations: [HotelFilterComponent, HotelListComponent, HotelsComponent],
   providers: [HotelsService]

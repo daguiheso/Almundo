@@ -13,6 +13,7 @@ export class HotelFilterComponent implements OnInit {
   @Output() shareDataEvent = new EventEmitter();
   hotels: Hotel;
   queryName: string;
+  loading = false;
 
   selectedFilterStars = {
     allStars: false,
@@ -28,6 +29,7 @@ export class HotelFilterComponent implements OnInit {
   ngOnInit() { }
 
   searchHotels() {
+    this.loading = true;
     // Deselected filters checbok
     this.selectedFilterStars = {
       allStars: false,
@@ -42,13 +44,16 @@ export class HotelFilterComponent implements OnInit {
     this.hotelsService.getHotels(options)
       .subscribe(res => {
         this.hotels = res.body;
+        this.loading = false;
         this.shareDataEvent.emit(this.hotels);
       }, error => {
+        this.loading = false;
         debugger
       });
   }
 
   selectFilterChexboxStars() {
+    this.loading = true;
     this.queryName = '';
     let options = { name: 'stars', query: '' };
 
@@ -66,8 +71,10 @@ export class HotelFilterComponent implements OnInit {
     this.hotelsService.getHotels(options)
       .subscribe(res => {
         this.hotels = res.body;
+        this.loading = false;
         this.shareDataEvent.emit(this.hotels);
       }, error => {
+        this.loading = false;
         debugger
       });
 

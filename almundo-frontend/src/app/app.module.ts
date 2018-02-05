@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app.routing.module';
 
 import { HotelsModule } from './hotels/hotels.module';
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +15,7 @@ import { HotelsModule } from './hotels/hotels.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HotelsModule
+    HotelsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

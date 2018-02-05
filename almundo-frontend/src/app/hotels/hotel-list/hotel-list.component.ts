@@ -10,17 +10,22 @@ import { Hotel } from '../models/hotels.models';
 })
 export class HotelListComponent implements OnInit {
 
+  loading = false;
   hotels: Hotel[] = [];
 
   constructor(
     private hotelsService: HotelsService
-  ) { }
+  ) {
+    this.loading = true;
+  }
 
   ngOnInit() {
     this.hotelsService.getHotels()
       .subscribe(res => {
+        this.loading = false;
         this.hotels = res.body;
       }, error => {
+        this.loading = false;
         debugger
       })
   }

@@ -1,5 +1,6 @@
-<ul class="gridList">
-  <li *ngFor="let hotel of hotels" class="gridList__item">
+<div class="gridList">
+  <ngx-loading [show]="loading"></ngx-loading>
+  <div *ngFor="let hotel of hotels" class="gridList__item">
     <!-- Image -->
     <div class="gridList__item--image">
       <img src="http://localhost:3000/images/hotels/{{hotel.image}}" alt="{{hotel.name}}">
@@ -39,5 +40,5 @@
       </div>
       <a href="#">Ver hotel</a>
     </div>
-  </li>
-</ul>
+  </div>
+</div>
