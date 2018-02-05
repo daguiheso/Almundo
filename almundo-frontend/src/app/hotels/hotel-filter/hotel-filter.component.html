@@ -27,13 +27,25 @@
       <div class="accordion__panel--body">
         <ul class="filterStars">
           <li>
-            <input type="checkbox" name="star" value="Bike">
+            <input
+              type="checkbox"
+              (change)="selectFilterChexboxStars()"
+              name="allStars"
+              [(ngModel)]="selectedFilterStars.allStars"
+              value="selectedFilterStars.allStars"
+            >
             <div>
               Todas las estrellas
             </div>
           </li>
           <li>
-            <input type="checkbox" name="star" value="Bike">
+            <input
+              type="checkbox"
+              (change)="selectFilterChexboxStars()"
+              name="fiveStars"
+              [(ngModel)]="selectedFilterStars.fiveStars"
+              value="selectedFilterStars.fiveStars"
+            >
             <div>
               <span class="icon__star"></span>
               <span class="icon__star"></span>
@@ -43,7 +55,13 @@
             </div>
           </li>
           <li>
-            <input type="checkbox" name="star" value="Bike">
+            <input
+              type="checkbox"
+              (change)="selectFilterChexboxStars()"
+              name="fourStars"
+              [(ngModel)]="selectedFilterStars.fourStars"
+              value="selectedFilterStars.fourStars"
+            >
             <div>
               <span class="icon__star"></span>
               <span class="icon__star"></span>
@@ -52,7 +70,13 @@
             </div>
           </li>
           <li>
-            <input type="checkbox" name="star" value="Bike">
+            <input
+              type="checkbox"
+              (change)="selectFilterChexboxStars()"
+              name="threeStars"
+              [(ngModel)]="selectedFilterStars.threeStars"
+              value="selectedFilterStars.threeStars"
+            >
             <div>
               <span class="icon__star"></span>
               <span class="icon__star"></span>
@@ -60,14 +84,26 @@
             </div>
           </li>
           <li>
-            <input type="checkbox" name="star" value="Bike">
+            <input
+              type="checkbox"
+              (change)="selectFilterChexboxStars()"
+              name="twoStars"
+              [(ngModel)]="selectedFilterStars.twoStars"
+              value="selectedFilterStars.twoStars"
+            >
             <div>
               <span class="icon__star"></span>
               <span class="icon__star"></span>
             </div>
           </li>
           <li>
-            <input type="checkbox" name="star" value="Bike">
+            <input
+              type="checkbox"
+              (change)="selectFilterChexboxStars()"
+              name="oneStars"
+              [(ngModel)]="selectedFilterStars.oneStars"
+              value="selectedFilterStars.oneStars"
+            >
             <div>
               <span class="icon__star"></span>
             </div>

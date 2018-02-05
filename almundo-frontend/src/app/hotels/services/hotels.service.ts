@@ -9,14 +9,10 @@ export class HotelsService {
 
   getHotels(params?): Observable<HttpResponse<any>> {
     if (params) {
-      if (params.name === 'name') {
-        return this.http.get('http://localhost:3000/api/hotels',
-          {
-            observe: 'response',
-            params: new HttpParams().set(params.name, params.query)
-          }
-        )
-      }
+      return this.http.get('http://localhost:3000/api/hotels', {
+        observe: 'response',
+        params: new HttpParams().set(params.name, params.query)
+      })
     }
     return this.http.get('http://localhost:3000/api/hotels', { observe: 'response'})
   }

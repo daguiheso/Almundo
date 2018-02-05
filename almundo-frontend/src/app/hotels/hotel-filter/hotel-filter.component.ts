@@ -7,18 +7,38 @@ import { HotelsService } from '../services/hotels.service';
   templateUrl: './hotel-filter.component.html',
   styleUrls: ['./hotel-filter.component.scss']
 })
+
 export class HotelFilterComponent implements OnInit {
 
   @Output() shareDataEvent = new EventEmitter();
   hotels: Hotel;
-  queryName: {};
+  queryName: string;
+
+  selectedFilterStars = {
+    allStars: false,
+    fiveStars: false,
+    fourStars: false,
+    threeStars: false,
+    twoStars: false,
+    oneStars: false,
+  }
 
   constructor(private hotelsService: HotelsService) { }
 
   ngOnInit() { }
 
   searchHotels() {
-    let options = { name: 'name', query: this.queryName}
+    // Deselected filters checbok
+    this.selectedFilterStars = {
+      allStars: false,
+      fiveStars: false,
+      fourStars: false,
+      threeStars: false,
+      twoStars: false,
+      oneStars: false,
+    }
+
+    let options = { name: 'name', query: this.queryName };
     this.hotelsService.getHotels(options)
       .subscribe(res => {
         this.hotels = res.body;
@@ -26,5 +46,30 @@ export class HotelFilterComponent implements OnInit {
       }, error => {
         debugger
       });
+  }
+
+  selectFilterChexboxStars() {
+    this.queryName = '';
+    let options = { name: 'stars', query: '' };
+
+    // Validation checbox selected
+    if (this.selectedFilterStars.allStars) options.query = '5+4+3+2+1'
+    else {
+      if (this.selectedFilterStars.fiveStars) options.query += '5+'
+      if (this.selectedFilterStars.fourStars) options.query += '4+'
+      if (this.selectedFilterStars.threeStars) options.query += '3+'
+      if (this.selectedFilterStars.twoStars) options.query += '2+'
+      if (this.selectedFilterStars.oneStars) options.query += '1+'
+    }
+
+    // Call get hotels service
+    this.hotelsService.getHotels(options)
+      .subscribe(res => {
+        this.hotels = res.body;
+        this.shareDataEvent.emit(this.hotels);
+      }, error => {
+        debugger
+      });
+
   }
 }
