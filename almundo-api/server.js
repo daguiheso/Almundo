@@ -5,6 +5,7 @@ const http = require('http')
 const chalk = require('chalk')
 const express = require('express')
 var path = require('path')
+var cors = require('cors')
 
 const api = require('./api')
 
@@ -13,6 +14,7 @@ const app = express()
 const server = http.createServer(app)
 
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(cors())
 app.use('/api', api)
 
 // Express Error Handler
