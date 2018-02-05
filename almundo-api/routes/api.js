@@ -6,7 +6,7 @@ var _ = require('underscore')
 
 const api = express.Router()
 
-const data = require('./data.json')
+const data = require('../data.json')
 
 // Route GET /hotels
 api.get('/hotels', (req, res, next) => {

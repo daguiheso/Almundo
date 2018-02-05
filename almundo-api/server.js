@@ -7,7 +7,7 @@ const express = require('express')
 var path = require('path')
 var cors = require('cors')
 
-const api = require('./api')
+const api = require('./routes/api')
 
 const port = process.env.PORT || 3000
 const app = express()
