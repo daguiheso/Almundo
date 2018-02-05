@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Hotel } from '../models/hotels.models';
+import { HotelsService } from '../services/hotels.service';
 
 @Component({
   selector: 'app-hotel-filter',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotelFilterComponent implements OnInit {
 
-  constructor() { }
+  @Output() shareDataEvent = new EventEmitter();
+  hotels: Hotel;
+  queryName: {};
 
-  ngOnInit() {
+  constructor(private hotelsService: HotelsService) { }
+
+  ngOnInit() { }
+
+  searchHotels() {
+    let options = { name: 'name', query: this.queryName}
+    this.hotelsService.getHotels(options)
+      .subscribe(res => {
+        this.hotels = res.body;
+        this.shareDataEvent.emit(this.hotels);
+      }, error => {
+        debugger
+      });
   }
-
 }

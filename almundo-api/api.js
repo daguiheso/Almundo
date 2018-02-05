@@ -20,11 +20,11 @@ api.get('/hotels', (req, res, next) => {
       data.map(obj => {
         obj.name.match(re) ? predicated.push(obj) : null
       })
-      return res.status(200).send({ data: predicated })
+      return res.status(200).send(predicated)
     }
     if (query.stars) {
       let filtered = _.where(data, { stars: parseInt(query.stars) })
-      return res.status(200).send({ data: filtered })
+      return res.status(200).send(filtered)
     }
   }
   // If there is no query

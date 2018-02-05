@@ -10,7 +10,7 @@ import { Hotel } from '../models/hotels.models';
 })
 export class HotelListComponent implements OnInit {
 
-  hotels: Hotel;
+  hotels: Hotel[] = [];
 
   constructor(
     private hotelsService: HotelsService
@@ -23,6 +23,10 @@ export class HotelListComponent implements OnInit {
       }, error => {
         debugger
       })
+  }
+
+  sendData(data: Hotel[]) {
+    this.hotels = data;
   }
 
   validateStars(hotel: Hotel, spectative: number) {

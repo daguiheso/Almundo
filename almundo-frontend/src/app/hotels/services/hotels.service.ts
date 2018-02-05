@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -7,7 +7,17 @@ export class HotelsService {
 
   constructor(private http: HttpClient) { }
 
-  getHotels(): Observable<HttpResponse<any>> {
+  getHotels(params?): Observable<HttpResponse<any>> {
+    if (params) {
+      if (params.name === 'name') {
+        return this.http.get('http://localhost:3000/api/hotels',
+          {
+            observe: 'response',
+            params: new HttpParams().set(params.name, params.query)
+          }
+        )
+      }
+    }
     return this.http.get('http://localhost:3000/api/hotels', { observe: 'response'})
   }
 

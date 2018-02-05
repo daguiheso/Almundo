@@ -1,4 +1,4 @@
 <div class="wrapper wrapperFlex">
-  <app-hotel-filter></app-hotel-filter>
-  <app-hotel-list></app-hotel-list>
+  <app-hotel-filter (shareDataEvent)="hotelList.sendData($event)"></app-hotel-filter>
+  <app-hotel-list #hotelList></app-hotel-list>
 </div>

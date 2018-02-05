@@ -63,15 +63,16 @@
 					font-size: .8em;
 					height: 33px;
 					padding: 0 7px;
-					width: calc(100% - 110px);
+					width: calc(100% - 90px);
 					box-shadow: 1px 1px 0px 0px #c7c4c7;
 				}
 				button {
-					box-shadow: 1px 1px 0px 0px #c7c4c7;
+					box-shadow: inset 0px -1px 3px -1px rgba(3,1,41,1);
+					border-radius: 4px;
 					background: darkblue;
 					color: white;
 					border: none;
-					height: 37px;
+					height: 35px;
 					font-weight: 500;
 					width: 80px;
 					cursor: pointer;

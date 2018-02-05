@@ -11,8 +11,8 @@
         <span class="icon__arrow--up arrow"></span>
       </div>
       <div class="accordion__panel--body">
-        <form action="">
-          <input type="text" placeholder="Ingrese el nombre del hotel">
+        <form (ngSubmit)="searchHotels()">
+          <input type="text" placeholder="Ingrese el nombre del hotel" name="queryName" [(ngModel)]="queryName">
           <button type="submit">Aceptar</button>
         </form>
       </div>

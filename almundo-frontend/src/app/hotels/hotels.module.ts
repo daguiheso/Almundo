@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Route } from '@angular/router';
 
@@ -12,10 +13,12 @@ import { HotelsService } from './services/hotels.service';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     HotelsRoutingModule,
     HttpClientModule
   ],
   declarations: [HotelFilterComponent, HotelListComponent, HotelsComponent],
   providers: [HotelsService]
 })
+
 export class HotelsModule { }

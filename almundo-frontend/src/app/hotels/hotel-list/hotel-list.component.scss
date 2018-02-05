@@ -18,9 +18,9 @@
 		width: 100%;
 		&--image {
 			width: 280px;
-			max-height: 190px;
-			overflow: hidden;
 			img {
+				max-height: 180px;
+				overflow: hidden;
 				width: 100%;
 				display: block;
 			}
@@ -157,6 +157,11 @@
 	@media (max-width: 767px) {
 		&__item {
 			width: 100%;
+			&--image {
+				img {
+					max-height: initial;
+				}
+			}
 		}
 	}
 	@media (max-width: 600px) {
